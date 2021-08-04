@@ -152,7 +152,10 @@ public class Tokenizador {
         if (Character.isWhitespace(caracterActual)) {
             estadoActual = Estado.A;
         }else{
-            if (Character.isDigit(caracterActual)) {
+            if (Character.isLetter(caracterActual)) {
+                estadoActual = Estado.B;
+                bufferTokenActual.push(caracterActual);
+            }else if (Character.isDigit(caracterActual)) {
                 estadoActual = Estado.C;
                 bufferTokenActual.push(caracterActual);
             }else if (isSimbolo(caracterActual)) {
@@ -172,7 +175,16 @@ public class Tokenizador {
             tokens.add(new Token(TipoToken.ERROR, stackToString(bufferTokenActual)));
             bufferTokenActual.clear();
         }else{
-            bufferTokenActual.push(caracterActual);
+            if (isSimbolo(caracterActual)) {
+                estadoActual = Estado.F;   
+                tokens.add(new Token(TipoToken.ERROR, stackToString(bufferTokenActual)));
+                bufferTokenActual.clear();
+                bufferTokenActual.push(caracterActual);
+                tokens.add(new Token(TipoToken.SIMBOLO, stackToString(bufferTokenActual)));
+                bufferTokenActual.clear();
+            }else{
+                bufferTokenActual.push(caracterActual);
+            }
         }
     }
 

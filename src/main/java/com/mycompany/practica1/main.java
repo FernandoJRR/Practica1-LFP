@@ -16,5 +16,6 @@ public class main {
     public static void main(String[] args){
         CuadroTexto cuadroTexto = new CuadroTexto();
         cuadroTexto.setVisible(true);
+
     }
 }

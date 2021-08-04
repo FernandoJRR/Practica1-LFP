@@ -33,22 +33,24 @@ public class CuadroTexto extends javax.swing.JFrame {
         analizarButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tokensTextArea = new javax.swing.JTextArea();
+        tokensLabel = new javax.swing.JLabel();
+        expresionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(350, 220));
-        setPreferredSize(new java.awt.Dimension(350, 220));
+        setMinimumSize(new java.awt.Dimension(350, 250));
+        setPreferredSize(new java.awt.Dimension(350, 250));
 
         jPanel1.setMinimumSize(new java.awt.Dimension(350, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(350, 200));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         expresionTextField.setPreferredSize(new java.awt.Dimension(100, 23));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 114;
         jPanel1.add(expresionTextField, gridBagConstraints);
@@ -61,7 +63,7 @@ public class CuadroTexto extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 2;
         jPanel1.add(analizarButton, gridBagConstraints);
 
         jScrollPane2.setPreferredSize(new java.awt.Dimension(274, 130));
@@ -72,10 +74,23 @@ public class CuadroTexto extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel1.add(jScrollPane2, gridBagConstraints);
+
+        tokensLabel.setText("Tokens");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        jPanel1.add(tokensLabel, gridBagConstraints);
+
+        expresionLabel.setText("Expresion");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(expresionLabel, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,9 +118,11 @@ public class CuadroTexto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton analizarButton;
+    private javax.swing.JLabel expresionLabel;
     private javax.swing.JTextField expresionTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel tokensLabel;
     private javax.swing.JTextArea tokensTextArea;
     // End of variables declaration//GEN-END:variables
 }
