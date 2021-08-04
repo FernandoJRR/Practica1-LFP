@@ -5,7 +5,6 @@
  */
 package com.mycompany.practica1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -29,6 +28,5 @@ public class main {
         for (Token token : tokens) {
             System.out.println(token.getTipoToken()+" "+token.getExpresion());
         }
-        
     }
 }
