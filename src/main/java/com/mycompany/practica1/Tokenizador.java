@@ -74,6 +74,9 @@ public class Tokenizador {
                 estadoActual = Estado.F;
                 tokens.add(new Token(TipoToken.IDENTIFICADOR, stackToString(bufferTokenActual)));
                 bufferTokenActual.clear();
+                bufferTokenActual.push(caracterActual);
+                tokens.add(new Token(TipoToken.SIMBOLO, stackToString(bufferTokenActual)));
+                bufferTokenActual.clear();
             }else{
                 estadoActual = Estado.X;
                 bufferTokenActual.push(caracterActual);
@@ -97,7 +100,7 @@ public class Tokenizador {
                 tokens.add(new Token(TipoToken.ENTERO, stackToString(bufferTokenActual)));
                 bufferTokenActual.clear();
                 bufferTokenActual.push(caracterActual);
-                tokens.add(new Token(TipoToken.ENTERO, stackToString(bufferTokenActual)));
+                tokens.add(new Token(TipoToken.SIMBOLO, stackToString(bufferTokenActual)));
                 bufferTokenActual.clear();
             }else{
                 estadoActual = Estado.X;
@@ -134,6 +137,9 @@ public class Tokenizador {
             }else if (isSimbolo(caracterActual)) {
                 estadoActual = Estado.F;   
                 tokens.add(new Token(TipoToken.DECIMAL, stackToString(bufferTokenActual)));
+                bufferTokenActual.clear();
+                bufferTokenActual.push(caracterActual);
+                tokens.add(new Token(TipoToken.SIMBOLO, stackToString(bufferTokenActual)));
                 bufferTokenActual.clear();
             }else{
                 estadoActual = Estado.X;

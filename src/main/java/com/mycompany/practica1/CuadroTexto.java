@@ -30,34 +30,28 @@ public class CuadroTexto extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         expresionTextField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tokensTextArea = new javax.swing.JTextArea();
         analizarButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tokensTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(300, 150));
-        setPreferredSize(new java.awt.Dimension(300, 150));
+        setMinimumSize(new java.awt.Dimension(350, 220));
+        setPreferredSize(new java.awt.Dimension(350, 220));
 
+        jPanel1.setMinimumSize(new java.awt.Dimension(350, 200));
+        jPanel1.setPreferredSize(new java.awt.Dimension(350, 200));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 5, 0};
         jPanel1Layout.rowHeights = new int[] {0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
+
+        expresionTextField.setPreferredSize(new java.awt.Dimension(100, 23));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 114;
         jPanel1.add(expresionTextField, gridBagConstraints);
-
-        tokensTextArea.setColumns(20);
-        tokensTextArea.setRows(5);
-        jScrollPane1.setViewportView(tokensTextArea);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        jPanel1.add(jScrollPane1, gridBagConstraints);
 
         analizarButton.setText("Analizar");
         analizarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -70,11 +64,24 @@ public class CuadroTexto extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         jPanel1.add(analizarButton, gridBagConstraints);
 
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(274, 130));
+
+        tokensTextArea.setColumns(20);
+        tokensTextArea.setRows(5);
+        jScrollPane2.setViewportView(tokensTextArea);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel1.add(jScrollPane2, gridBagConstraints);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +105,7 @@ public class CuadroTexto extends javax.swing.JFrame {
     private javax.swing.JButton analizarButton;
     private javax.swing.JTextField expresionTextField;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea tokensTextArea;
     // End of variables declaration//GEN-END:variables
 }
