@@ -29,9 +29,9 @@ public class CuadroTexto extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        expresionTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        tokensTextArea = new javax.swing.JTextArea();
         analizarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,11 +47,11 @@ public class CuadroTexto extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 114;
-        jPanel1.add(jTextField1, gridBagConstraints);
+        jPanel1.add(expresionTextField, gridBagConstraints);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        tokensTextArea.setColumns(20);
+        tokensTextArea.setRows(5);
+        jScrollPane1.setViewportView(tokensTextArea);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -85,16 +85,20 @@ public class CuadroTexto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void analizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarButtonActionPerformed
-        // TODO add your handling code here:
+        tokensTextArea.setText("");
+        Token[] tokens = Tokenizador.tokenizar((expresionTextField.getText()+" ").toCharArray());
+        for (Token token : tokens) {
+            tokensTextArea.setText(tokensTextArea.getText()+token.getTipoToken()+" "+token.getExpresion()+"\n");
+        }
     }//GEN-LAST:event_analizarButtonActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton analizarButton;
+    private javax.swing.JTextField expresionTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea tokensTextArea;
     // End of variables declaration//GEN-END:variables
 }

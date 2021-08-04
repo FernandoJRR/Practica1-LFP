@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class Tokenizador {
     private static Estado estadoActual = Estado.A;
     private static Stack<Character> bufferTokenActual = new Stack<>();
-    private static ArrayList<Token> tokens = new ArrayList<>();
+    private static ArrayList<Token> tokens;
     
     public static Token[] tokenizar(char[] statement) {
+        tokens = new ArrayList<>();
         for (char caracterActual : statement) {
             switch (estadoActual) {
                 case A:

@@ -13,20 +13,8 @@ import java.util.Stack;
  * @author fernanrod
  */
 public class main {
-    static Estado estadoActual = Estado.A;
-    static Stack<Character> bufferTokenActual = new Stack<>();
     public static void main(String[] args){
-        /*
         CuadroTexto cuadroTexto = new CuadroTexto();
         cuadroTexto.setVisible(true);
-        */
-        
-        Scanner input = new Scanner(System.in);
-        char[] statement = (input.nextLine()+" ").toCharArray();
-        input.close();
-        Token[] tokens = Tokenizador.tokenizar(statement);
-        for (Token token : tokens) {
-            System.out.println(token.getTipoToken()+" "+token.getExpresion());
-        }
     }
 }
